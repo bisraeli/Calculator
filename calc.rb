@@ -21,13 +21,21 @@ def divide (x,y)
   return x/y
 end
 
-def area (r)
-  return 4*pi*r**r
+def area_of_a_sphere (r)
+  return 4*(3.14159)*r**r
 end
-
+def volume_of_a_sphere (r)
+  return (4/3.0*3.14159*r**r)
+end
+def area_of_circle (r)
+  return (3.14159*r**r)
+  end
+def volume_of_a_rectangle (l,w,h)
+  return (l*w*h)
+end
 while true
 #This line will output
-puts "What would you like to do?"
+puts "What would you like to do? You can add, subtract, multiply, divide, find sphere area, find sphere volume, find circle area, or find rectangular prism volume?"
 
 #this line will ask for input
 operation = gets.chomp
@@ -58,8 +66,25 @@ case operation
     puts "give me your second number"
     input2= gets.chomp.to_f
     puts divide(input1,input2)
-  when "area"
-    put "give me the radius of your sphere"
+  when "find sphere area"
+    puts "give me the radius of your sphere"
+    input1=gets.chomp.to_f
+    puts area_of_a_sphere(input1)
+  when "find circle area"
+    puts "give me the radius of your circle"
+    input1=gets.chomp
+  when "find sphere volume"
+    puts "give me the radius of your sphere so we find the volume"
+    input1=gets.chomp.to_f
+    puts volume_of_a_sphere(input1)
+  when "find rectangular prism volume"
+    puts "give me the length of your prism"
+    input1=gets.chomp.to_f
+    puts "give me your prism's width"
+    input2=gets.chomp.to_f
+    puts "now finally, give me your prism's height"
+    input3=gets.chomp.to_f
+    puts volume_of_a_rectangle(input1,input2,input3)
   else
    puts "i've never heard of that operation before."
   end
